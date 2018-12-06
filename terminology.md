@@ -9,6 +9,9 @@ A resource is a stateful, named entity.
 
 The state of a resource may change over time. A resource is governed by an entity that is authoritative for the resource state and is named by a resource identifier.
 
+#### Uniform Interface
+Every [resource](#resource) is expected to offer (a subset of) the same, small, standardized set of methods.
+
 #### Interaction
 An interaction in these distributed systems is the remote invocation of a method on a resource in [client](#client)-[server](#server)/[request](#request)-[response](#response) style, transferring [representations](#representation) of various kinds.
 
@@ -21,11 +24,14 @@ A server is an entity that applies a [requested](#request) method to a [resource
 #### Request
 A request specifies the [resource](#resource) targeted by the method invocation and the method to invoke. Depending on the method, a request may contain a [representation](#representation) and further request parameters.
 
+#### Stateless
+Every [request](#request) is expected to not assume any state at a server other than resource state. (In particular, any state from a previous interaction that was not the result of applying the method to the resource.)
+
 #### Response
 A response specifies the outcome of invoking a method on a [resource](#resource). Depending on the outcome, a response may contain a [representation](#representation) and further response parameters.
 
 #### Representation
-A representation is the serialization, for example, of a (current or desired) resource state or an outcome, as a sequence of bytes, labeled with metadata.
+A representation is the serialization of, for example, a (current or desired) resource state or an outcome as a sequence of bytes, labeled with metadata.
 
 #### Augmented Representation
 An augmented representation refers to not only a single document of a specific media type, but also any metadata serialized through other protocol capabilities, and additional linked documents that contain further metadata that facilitates constructing affordances from the initial representation document.
@@ -34,16 +40,9 @@ A processing model may define a transformation from the representation, other me
 
 #### Representation Format
 A defined structure for a [representation](#representation).
-Often specified by a Content-Type, which can employ a Media-Type name plus parameters.
-
-#### Stateless
-Every [request](#request) is expected to not assume any state at a server other than resource state. (In particular, any state from a previous interaction that was not the result of applying the method to the resource.)
-
-#### Uniform Interface
-Every [resource](#resource) is expected to offer (a subset of) the same, small, standardized set of methods.
 
 #### Agent
-An agent in these distributed systems is an entity that has the authority to decide which, if any, [interaction](#interaction) is appropriate and to carry out this interaction on behalf of a stakeholder.
+An agent in these distributed systems is an entity that has the authority to decide which, if any, [interaction](#interaction) is appropriate and to carry out this [interaction](#interaction) on behalf of a stakeholder.
 
 #### User Agent
 A user agent is an [agent](#agent) that is acting on behalf of a user.
