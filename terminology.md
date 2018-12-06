@@ -84,16 +84,44 @@ Do not use, too many meanings.  Always use the full term, such as:
 
 
 
-# Related Terms
+# The Web
+
+The Web is a distributed system in REST style.
+
+#### Web Resource
+A Web resource is a a [resource](#resource) that can be interacted with through a [Web transfer protocol](#web-transfer-protocol).
+
+#### Web Server
+A Web server is the authority for a [Web resource](#web-resource).
+
+#### Web Transfer Protocol
+A Web transfer protocol is a network protocol such as HTTP and CoAP that facilitates the transfer of request and response [messages](#message).
+
+#### Message
+
+> Header and payload(?).
+
+#### Content
+
+> A representation(?). May be spread across multiple payloads. Labeled with a [content type](#content-type) and [content coding](#content-coding) or a [content format](#content-format).
 
 #### Media Type
-A sequence of characters such as "text/plain" that identifies a (potentially parameterizable) [representation format](#representation-format).
+A media type is a string of characters such as "text/plain" that identifies a (potentially parameterizable) [representation format](#representation-format).
 
 #### Content Type
-A sequence of characters such as "text/plain; charset=utf-8" that identifies and parameterizes a [representation format](#representation-format).
+A content type is a string of characters such as "text/plain; charset=utf-8" that identifies and parameterizes a [representation format](#representation-format).
+
+#### Content Coding  
+A content coding is an encoding transformation applied to a [representation](#representation), such as Gzip compression.
 
 #### Content Format
 The combination of a [content type](#content-type) and a [content coding](#content-coding).
 
-#### Origin
-Scheme + Authority ([RFC 6454](https://tools.ietf.org/html/rfc6454)).  A term not relevant to and preferably avoided in the present discussion.
+#### Web Origin  
+A Web origin is a scheme/host/port triple \[[RFC 6454](https://tools.ietf.org/html/rfc6454)\].
+
+#### URI
+A URI (Uniform Resource Identifier) is a string of characters that identifies a [Web resource](#web-resource) in a standardized, uniform way \[[RFC 3986](https://tools.ietf.org/html/rfc3986)\].
+
+#### URI Reference
+A URI reference is either a [URI](#uri) or a relative reference. A relative reference can be resolved to a [URI](#uri) through the process of reference resolution using a base URI.
